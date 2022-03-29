@@ -1,24 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BrotherLabelsInWifi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Devices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-f1-ksn">
+                                <rect key="frame" x="142.5" y="74" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ogb-6d-Jsa" userLabel="Devices">
+                                <rect key="frame" x="21" y="103" width="372" height="177"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="networkDevice" id="uH1-n6-Wwi" userLabel="networkDevice">
+                                        <rect key="frame" x="0.0" y="44.5" width="372" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uH1-n6-Wwi" id="NYy-JO-GMe">
+                                            <rect key="frame" x="0.0" y="0.0" width="372" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSN-vj-7QO">
+                                <rect key="frame" x="21" y="322" width="372" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt; none &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsY-7C-6tc">
+                                <rect key="frame" x="21" y="351" width="372" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-oV-InR">
+                                <rect key="frame" x="164.5" y="550" width="85" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="PDF Print"/>
+                                <connections>
+                                    <action selector="pdfPrint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WLo-xa-LAg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-c2-WRK">
+                                <rect key="frame" x="21" y="764" width="372" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Refresh Network Device List"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U1-Zq-Whi">
+                                <rect key="frame" x="21" y="460" width="372" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Image Print"/>
+                                <connections>
+                                    <action selector="imagePrint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jV9-xl-W6Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ogb-6d-Jsa" firstAttribute="top" secondItem="QTC-f1-ksn" secondAttribute="bottom" constant="8" symbolic="YES" id="2BH-kP-mxd"/>
+                            <constraint firstItem="7U1-Zq-Whi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="5Uo-zj-wC7"/>
+                            <constraint firstItem="nSN-vj-7QO" firstAttribute="top" secondItem="ogb-6d-Jsa" secondAttribute="bottom" constant="42" id="By2-sk-Pab"/>
+                            <constraint firstItem="QTC-f1-ksn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GwP-2V-ex2"/>
+                            <constraint firstItem="nsY-7C-6tc" firstAttribute="centerX" secondItem="nSN-vj-7QO" secondAttribute="centerX" id="Hcl-6L-LoR"/>
+                            <constraint firstItem="nsY-7C-6tc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="LGW-4D-QXO"/>
+                            <constraint firstItem="a8m-c2-WRK" firstAttribute="centerX" secondItem="ejh-oV-InR" secondAttribute="centerX" id="Mjn-gb-FtY"/>
+                            <constraint firstItem="a8m-c2-WRK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="Pkn-hR-iy1"/>
+                            <constraint firstItem="ogb-6d-Jsa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="RQI-yo-aUz"/>
+                            <constraint firstItem="nSN-vj-7QO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="ST9-dT-7aa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ogb-6d-Jsa" secondAttribute="trailing" constant="21" id="WjK-n8-DBx"/>
+                            <constraint firstItem="7U1-Zq-Whi" firstAttribute="top" secondItem="nsY-7C-6tc" secondAttribute="bottom" constant="88" id="XiB-1s-i9V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a8m-c2-WRK" secondAttribute="bottom" constant="67" id="ZsS-eV-riD"/>
+                            <constraint firstItem="nSN-vj-7QO" firstAttribute="centerX" secondItem="ogb-6d-Jsa" secondAttribute="centerX" id="aq6-gS-vEh"/>
+                            <constraint firstItem="QTC-f1-ksn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="cfz-I8-27D"/>
+                            <constraint firstItem="a8m-c2-WRK" firstAttribute="top" secondItem="ejh-oV-InR" secondAttribute="bottom" constant="183" id="gDs-i2-tjZ"/>
+                            <constraint firstItem="ejh-oV-InR" firstAttribute="centerX" secondItem="7U1-Zq-Whi" secondAttribute="centerX" id="giy-92-0qB"/>
+                            <constraint firstItem="7U1-Zq-Whi" firstAttribute="centerX" secondItem="nsY-7C-6tc" secondAttribute="centerX" id="ou5-Rl-Z1O"/>
+                            <constraint firstItem="ogb-6d-Jsa" firstAttribute="centerX" secondItem="QTC-f1-ksn" secondAttribute="centerX" id="pI2-eL-Sxf"/>
+                            <constraint firstItem="ejh-oV-InR" firstAttribute="top" secondItem="7U1-Zq-Whi" secondAttribute="bottom" constant="59" id="sER-yt-stZ"/>
+                            <constraint firstItem="nsY-7C-6tc" firstAttribute="top" secondItem="nSN-vj-7QO" secondAttribute="bottom" constant="8" symbolic="YES" id="uUZ-6J-qZG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="devices" destination="ogb-6d-Jsa" id="CKy-kD-gnb"/>
+                        <outlet property="selectedDevice" destination="nsY-7C-6tc" id="thB-Sh-YfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
